@@ -35,6 +35,7 @@ function App() {
 
   return (
     <div className="container">
+      <Navbar />
       {posts && posts.map((post, index) => (
         <div>
           <h2>{post.title}</h2>
@@ -43,7 +44,6 @@ function App() {
         </div>
       )
       )}
-      <Navbar />
       <Main />
       <h1>{count}</h1>
       <button onClick={increaseNumber}>Increase me</button>

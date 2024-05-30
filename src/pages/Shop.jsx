@@ -1,13 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { createServer } from "miragejs"
+import { makeServer } from '../server'
 
-let server = createServer()
-server.get("/api/shop", { shopItems:[
-    { id: 1, title: "Paper Leather Cap", price: 225},
-    { id: 2, title: "Phone Pouch", price: 268},
-  ]
-})
+// Initialize the MirageJS server
+makeServer();
 
 export default function Shop() {
   let [shopItems, setShopItems] = React.useState([])
@@ -22,8 +18,9 @@ export default function Shop() {
     <Link
       to={`/shop/${item.id}`}
       aria-label={`View details for ${item.name}, priced at $${item.price}`}
+      key={item.id}
     >
-      <li key={item.id}>{item.title}, {item.price}</li>
+      <li>{item.title}, {item.price}</li>
     </Link>
   ))
 

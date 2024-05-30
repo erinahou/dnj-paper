@@ -2,14 +2,13 @@ import { useEffect, useState } from 'react'
 import { Routes, Route, Link } from 'react-router-dom';
 import sanityClient from "./client"
 import './App.css'
-import Main from './components/Main'// remove this maybe
 import Home from './pages/Home'
 import Faq from './pages/Faq'
 import About from './pages/About'
 import Projects from './pages/Projects'
 import Shop from './pages/Shop'
 import ShopDetail from './pages/ShopDetail'
-import logo from "./assets/images/dnj_logo.png"
+import Layout from "./components/Layout"
 
 // Put this back on for Sanity
 // function App() {
@@ -63,23 +62,16 @@ function App() {
   // }
 
   return (
-    <div className="container">
-      <nav>
-        <Link to="/"><img src={logo} alt="DNJ Logo" /></Link>
-        <Link to="/faq">FAQ</Link>
-        <Link to="/about">About</Link>
-        <Link to="/projects">Projects</Link>
-        <Link to="/shop">Shop</Link>
-      </nav>
-      <Routes>
+    <Routes>
+      <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/shop/:id" element={<ShopDetail/>} />
-      </Routes>
-    </div>
+      </Route>
+    </Routes>
   )
 }
 

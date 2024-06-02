@@ -21,7 +21,7 @@ export function makeServer() {
     This item is only available for custom order. We adjust the pattern for fit, and discuss custom details: size, colour, paper type/finish, oil, dyed, natural, thicker, thinner, waxed, etc.
 
     To clean, lightly handwash in cold water or dryclean.`},
-    { id: 3, title: "Mac coat", price: 1200, imageUrl: "https://res.cloudinary.com/dmvbynqto/image/upload/v1717285385/dnj_mac_coat.jpg", description: `This design is based on the classic Mac Coat, and is constructed of panels of handmade Japanese paper, connected with soft rayon tape  in our studio in Melbourne, Australia.
+    { id: 4, title: "Mac coat", price: 1200, imageUrl: "https://res.cloudinary.com/dmvbynqto/image/upload/v1717285385/dnj_mac_coat.jpg", description: `This design is based on the classic Mac Coat, and is constructed of panels of handmade Japanese paper, connected with soft rayon tape  in our studio in Melbourne, Australia.
 
     The paper we typically use for this design is made in Kurotani, Kyoto, and treated using traditional methods of turning a sheet of paper into a cloth.
 

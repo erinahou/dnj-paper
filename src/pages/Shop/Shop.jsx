@@ -1,4 +1,5 @@
 import React from 'react'
+import ShopItemCard from '../../components/ShopItemCard';
 import { Link } from 'react-router-dom'
 import { makeServer } from '../../server'
 
@@ -20,7 +21,7 @@ export default function Shop() {
       aria-label={`View details for ${item.name}, priced at $${item.price}`}
       key={item.id}
     >
-      <li>{item.title}, {item.price}</li>
+      <ShopItemCard img={item.imageUrl} title={item.title} price={item.price} />
     </Link>
   ))
 

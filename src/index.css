@@ -59,6 +59,17 @@ button:focus-visible {
   color: orangered !important; /* Remove important if possible */
 }
 
+.shop-card {
+  display: flex;
+  background-color: pink;
+} /* Should this go in it's own css file specific to the component? */
+
+.shop-card--image {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

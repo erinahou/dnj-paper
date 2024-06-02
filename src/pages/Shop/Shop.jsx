@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { makeServer } from '../server'
+import { makeServer } from '../../server'
 
 // Initialize the MirageJS server
 makeServer();

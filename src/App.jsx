@@ -6,9 +6,15 @@ import Home from './pages/Home'
 import Faq from './pages/Faq'
 import About from './pages/About'
 import Projects from './pages/Projects'
-import Shop from './pages/Shop'
-import ShopDetail from './pages/ShopDetail'
+import Shop from './pages/Shop/Shop'
+import ShopDetail from './pages/Shop/ShopDetail'
 import Layout from "./components/Layout"
+import MaterialLayout from './components/MaterialLayout'
+import Washi from './pages/Materials/Washi'
+import Kanten from './pages/Materials/Kanten'
+import ShopItemInfo from './pages/Shop/ShopItemInfo'
+import ShopItemFabricsAndCare from './pages/Shop/ShopItemFabricsAndCare'
+import ShopItemPhotos from './pages/Shop/ShopItemPhotos'
 
 // Put this back on for Sanity
 // function App() {
@@ -63,13 +69,24 @@ function App() {
 
   return (
     <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/faq" element={<Faq />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/shop/:id" element={<ShopDetail/>} />
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="faq" element={<Faq />} />
+        <Route path="about" element={<About />} />
+        <Route path="projects" element={<Projects />} />
+        <Route path="shop" element={<Shop />} />
+
+        <Route path="shop/:id" element={<ShopDetail/>}>
+          <Route index element={<ShopItemInfo />} />
+          <Route path="fabrics-and-care" element={<ShopItemFabricsAndCare />}/>
+          <Route path="photos" element={<ShopItemPhotos />}/>
+        </Route>
+
+        <Route path="materials" element={<MaterialLayout />}>
+          <Route path="washi" element={<Washi />} />
+          <Route path="kanten" element={<Kanten />} />
+        </Route>
+
       </Route>
     </Routes>
   )

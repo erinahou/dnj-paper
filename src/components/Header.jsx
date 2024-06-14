@@ -1,12 +1,19 @@
 import React from 'react'
-import logo from "../assets/images/dnj_logo.png"
+import '../styles/header.css'
+import logo from "../assets/images/dnj_logo@3x.png"
 import { Link, NavLink } from 'react-router-dom'
 
 export default function Header() {
   return(
     <header>
-      <Link to="/"><img src={logo} alt="DNJ Logo" /></Link>
-      <nav>
+      <Link to="/">
+        <img
+          src={logo}
+          alt="DNJ Logo"
+          className="header-logo"
+        />
+      </Link>
+      <nav className="header-nav label">
         <NavLink
           to="faq"
           className = {({isActive}) => isActive ? "tab-active" : null }

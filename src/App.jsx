@@ -9,9 +9,9 @@ import Projects from './pages/Projects'
 import Shop from './pages/Shop/Shop'
 import ShopDetail from './pages/Shop/ShopDetail'
 import Layout from "./components/Layout"
-import MaterialLayout from './components/MaterialLayout'
-import Washi from './pages/Materials/Washi'
-import Kanten from './pages/Materials/Kanten'
+import Materials from './pages/Materials'
+import Konjac from './pages/Materials/Konjac'
+import AgarAgar from './pages/Materials/AgarAgar'
 import ShopItemInfo from './pages/Shop/ShopItemInfo'
 import ShopItemFabricsAndCare from './pages/Shop/ShopItemFabricsAndCare'
 import ShopItemPhotos from './pages/Shop/ShopItemPhotos'
@@ -82,9 +82,9 @@ function App() {
           <Route path="photos" element={<ShopItemPhotos />}/>
         </Route>
 
-        <Route path="materials" element={<MaterialLayout />}>
-          <Route path="washi" element={<Washi />} />
-          <Route path="kanten" element={<Kanten />} />
+        <Route path="materials" element={<Materials />}>
+          <Route path="konjac" element={<Konjac />} />
+          <Route path="agar-agar" element={<AgarAgar />} />
         </Route>
 
       </Route>

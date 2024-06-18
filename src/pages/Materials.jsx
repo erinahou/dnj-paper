@@ -12,15 +12,16 @@ import paperBrickImgTwo from "../assets/images/dnj_paperBrickPlaceholder_2@3x.jp
 
 export default function Materials() {
   return(
-    <div className="materials-container">
-      <div className="materials-title">
+    <div className="twelve-grid-container">
+      <div className="materials-title twelve-col-full">
         <h1>Every piece from DNJ is made of handmade paper</h1>
         <p>(and sometimes other stuff, too).</p>
       </div>
-      <div className="materials-carousel">
+      <div className="materials-carousel twelve-col-first-four">
         <img src={stackOfPaper} alt="Hanging paper" className="materials-carousel"/>
+        <p class="caption">1/3</p>
       </div>
-      <div className="materials-text">
+      <div className="twelve-col-last-six">
         <div className="p-large-bottom">
           <p class="label p-medium-bottom">Japanese paper / Washi / 和紙</p>
           <p>

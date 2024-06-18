@@ -53,6 +53,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: #FFFBF0;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -64,6 +65,15 @@ p {
   font-size: 1rem;
   line-height: 1.25rem;
   margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
 }
 
 button {
@@ -131,35 +141,67 @@ button:focus-visible {
   flex: 1
 }
 
-/* Materials page */
-.materials-container {
+/* Layout stying */
+
+.twelve-grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto;
 }
 
-.materials-title {
+
+.twelve-col-full {
   grid-column: 1 / span 12;
+}
+
+.twelve-col-first-eight {
+  grid-column: 1 / span 8;
+}
+
+.twelve-col-first-four {
+  grid-column: 1 / span 4;
+}
+
+.twelve-col-first-five {
+  grid-column: 1 / span 5;
+}
+
+.twelve-col-last-six {
+  grid-column: 7 / span 6;
+}
+
+/* About page */
+.about-portrait {
+  height: 37.9rem;
+  position: sticky;
+  top: 1.5rem;
+  z-index: 1000;
+}
+.about-portrait > img {
+  width: 100%;
+  border-left: 4px solid #32FF21;
+  border-bottom: 4px solid #32FF21;
+}
+
+
+/* Materials page */
+
+.materials-title {
   padding-bottom: 6rem;
 }
 
 .materials-carousel {
-  grid-column: 1 / span 4;
   height: 37.9rem;
   position: sticky;
   top: 1.5rem;
   z-index: 1000;
 }
 
-.materials-carousel img {
+.materials-carousel > img {
   width: 100%;
   border-top: 4px solid #32FF21;
   border-right: 4px solid #32FF21;
   box-shadow: 4.101px -4.101px 4.101px 0px rgba(50, 255, 33, 0.4);
-}
-
-.materials-text {
-  grid-column: 7 / span 6;
 }
 
 .materials-brick {

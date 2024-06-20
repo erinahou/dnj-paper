@@ -76,11 +76,7 @@ function App() {
         <Route path="projects" element={<Projects />} />
         <Route path="shop" element={<Shop />} />
 
-        <Route path="shop/:id" element={<ShopDetail/>}>
-          <Route index element={<ShopItemInfo />} />
-          <Route path="fabrics-and-care" element={<ShopItemFabricsAndCare />}/>
-          <Route path="photos" element={<ShopItemPhotos />}/>
-        </Route>
+        <Route path="shop/:id" element={<ShopDetail />} />
 
         <Route path="materials" element={<Materials />}>
           <Route path="konjac" element={<Konjac />} />

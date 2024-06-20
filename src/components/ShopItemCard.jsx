@@ -2,11 +2,14 @@ import React from 'react'
 
 export default function ShopItemCard(prop) {
   return(
-    <div className="shop-card">
-      <img src={prop.img} className="shop-card--image" />
+    <div>
+      <div className="shop-card-image-container">
+        <img src={prop.img[0]} className="shop-card-image" />
+      </div>
       <div>
-        <p>{prop.title}</p>
-        <p>{prop.price}</p>
+        <span>{prop.title}</span>
+        <span class="label"> ${prop.price}</span>
+        <span class="label">{prop.madeToOrder && ' Made to order'}</span>
       </div>
     </div>
   )

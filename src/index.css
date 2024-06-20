@@ -36,7 +36,7 @@
 
 #root {
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 1.5rem 0rem;
 }
 
 a {
@@ -59,6 +59,7 @@ body {
 h1 {
   font-size: 2rem;
   line-height: 1.1;
+  margin: 0;
 }
 
 p {
@@ -77,18 +78,19 @@ li {
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid black;
+  background-color: rgb(255, 255, 255, 0) !important;
   padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  font-family: "Diatype Mono Regular";
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1125rem;
+  font-weight: 400;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #32FF21;
 }
 button:focus,
 button:focus-visible {
@@ -147,8 +149,9 @@ button:focus-visible {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto;
+  gap: 24px;
+  padding: 0 1.5rem;
 }
-
 
 .twelve-col-full {
   grid-column: 1 / span 12;
@@ -170,6 +173,18 @@ button:focus-visible {
   grid-column: 7 / span 6;
 }
 
+.twelve-col-first-four {
+  grid-column: 1 / span 4;
+}
+
+.twelve-col-second-four {
+  grid-column: 5 / span 4;
+}
+
+.twelve-col-last-four {
+  grid-column: 9 / span 4;
+}
+
 /* About page */
 .about-portrait {
   height: 37.9rem;
@@ -188,6 +203,7 @@ button:focus-visible {
 
 .materials-title {
   padding-bottom: 6rem;
+  text-align: center;
 }
 
 .materials-carousel {
@@ -213,19 +229,88 @@ button:focus-visible {
   width: 49%;
 }
 
+/* Shop detail */
+.product-container {
+  display: flex;
+  justify-content: stretch;
+  align-items: flex-start;
+}
+
+.product-container > .product-title{
+  position: sticky;
+  top: 1.5rem;
+  z-index: 1000;
+  width: 33.33%;
+}
+
+.product-title h1 {
+  padding-top: 1rem;
+}
+
+.product-images-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.product-images-container > img {
+  height: 100%;
+  width: auto;
+  margin-bottom: 1.5rem;
+}
+
+.product-images-description {
+  position: sticky;
+  top: 1.5rem;
+  z-index: 1000;
+  width: 40%;
+}
+
+.buy-button {
+  width: 140px;
+}
+
 /* Erina's styling */
 .tab-active {
   color: orangered !important; /* Remove important if possible */
 }
 
+.shop-list-container {
+  /* display: flex;
+  flex-wrap: wrap;
+  width: 100%; */
+}
+
 .shop-card {
   display: flex;
-  background-color: pink;
+  margin: 16px;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
+
+.shop-card-container {
+
+}
+
+.shop-card-side-even {
+  grid-column: 1 / span 5;
 } /* Should this go in it's own css file specific to the component? */
 
-.shop-card--image {
-  width: 100px;
-  height: 100px;
+.shop-card-side-odd {
+  grid-column: 8 / span 5;
+  margin-top: 12rem;
+}
+
+.shop-card-image-container {
+  width: 100%;
+  box-shadow: 4.101px -4.101px 4.101px 0px rgba(50, 255, 33, 0.4);
+  background-color: rgba(50, 255, 33, 0.1);
+}
+
+.shop-card-image {
+  width: 100%;
+  height: auto;
   overflow: hidden;
 }
 

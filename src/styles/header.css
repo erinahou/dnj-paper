@@ -3,6 +3,7 @@ header {
   width: 100%;
   justify-content: space-between;
   text-transform: uppercase;
+  padding-bottom: 1rem;
 }
 
 .header-logo {
@@ -12,10 +13,13 @@ header {
 
 .header-nav {
   display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
   align-items: flex-start;
 }
 
-.header-nav > a {
+/* Vertical nav */
+/* .header-nav > a {
   writing-mode: vertical-rl;
   text-orientation: upright;
-}
+} */

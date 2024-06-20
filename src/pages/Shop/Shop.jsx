@@ -15,19 +15,25 @@ export default function Shop() {
       .then(data => setShopItems(data.shopItems))
   }, [])
 
-  let shopItemElements = shopItems.map(item => (
+  let shopItemElements = shopItems.map((item, key) => (
     <Link
       to={`/shop/${item.id}`}
       aria-label={`View details for ${item.name}, priced at $${item.price}`}
       key={item.id}
+      className={ key %  2 === 0 ? 'shop-card shop-card-side-even' : 'shop-card shop-card-side-odd' }
     >
-      <ShopItemCard img={item.imageUrl} title={item.title} price={item.price} />
+      <ShopItemCard
+        img={item.imageUrl}
+        title={item.title}
+        price={item.price}
+        madeToOrder={item.madeToOrder}
+      />
     </Link>
   ))
 
   return(
-    <ul>
+    <div class="shop-list-container twelve-grid-container">
       {shopItemElements}
-    </ul>
+    </div>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams, Link, NavLink, Outlet } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 export default function ShopDetail() {
   let params = useParams()
@@ -20,39 +20,40 @@ export default function ShopDetail() {
 
   return(
     <div>
-      <div>
-        <Link
-          to=".."
-          relative="path"
-        >
-          &larr; <span>Back to all shop items</span>
-        </Link>
+
+      <div class="product-container twelve-grid-container">
+        <div class="product-title">
+          <Link
+            to=".."
+            relative="path"
+          >
+            &larr; <span class="label">All items</span>
+          </Link>
+        </div>
+        <div class="product-images-description">
+          <h4>{shopItem.title} {shopItem.madeToOrder && ' (Made to order)'}</h4>
+          <div class="p-medium-bottom">
+            <p>{shopItem.description}</p>
+          </div>
+          <div class="p-medium-bottom">
+            <p class="label">Custom order</p>
+            <p>{shopItem.customOrder}</p>
+          </div>
+          <div class="p-medium-bottom">
+            <p class="label">Cleaning</p>
+            <p>{shopItem.cleaning}</p>
+          </div>
+          <div class="p-medium-bottom">
+            <p>A${shopItem.price}</p>
+          </div>
+          <button class="buy-button">Add to bag</button>
+        </div>
+        <div class="product-images-container">
+          {
+            shopItem.imageUrl.map(image => <img src={image}/>)
+          }
+        </div>
       </div>
-      <img src={shopItem.imageUrl} width={150} />
-      <h1>{shopItem.title}</h1>
-      <p>Price: ${shopItem.price}</p>
-      <nav>
-        <NavLink
-          to="."
-          end
-          className= {({isActive}) => isActive ? "tab-active" : null }
-        >
-          Description
-        </NavLink>
-        <NavLink
-          to="fabrics-and-care"
-          className= {({isActive}) => isActive ? "tab-active" : null }
-        >
-          Fabrics and care
-        </NavLink>
-        <NavLink
-          to="photos"
-          className= {({isActive}) => isActive ? "tab-active" : null }
-        >
-          Photos
-        </NavLink>
-      </nav>
-      <Outlet context={{ shopItem }} />
     </div>
   )
 }

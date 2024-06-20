@@ -1,0 +1,11 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  padding: 2rem 1rem 2rem 2rem;
+  /* border-top: 4px solid #32FF21;
+  border-right: 4px solid #32FF21; */
+  box-shadow: 4.101px -4.101px 4.101px 0px rgba(50, 255, 33, 1);
+  background-color: #FFFBF0;
+  width: 80px;
+}

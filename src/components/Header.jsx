@@ -6,13 +6,6 @@ import { Link, NavLink } from 'react-router-dom'
 export default function Header() {
   return(
     <header>
-      <Link to="/">
-        <img
-          src={logo}
-          alt="DNJ Logo"
-          className="header-logo"
-        />
-      </Link>
       <nav className="header-nav label">
         <NavLink
           to="faq"

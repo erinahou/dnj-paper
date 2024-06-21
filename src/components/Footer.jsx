@@ -5,7 +5,7 @@ import logo from "../assets/images/dnj_logo@3x.png"
 
 export default function Footer() {
   return(
-    <footer class="label">
+    <footer className="label">
       <Link to="/">
         <img
           src={logo}

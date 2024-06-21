@@ -5,7 +5,8 @@ import './App.css'
 import Home from './pages/Home'
 import Faq from './pages/Faq'
 import About from './pages/About'
-import Projects from './pages/Projects'
+import Projects from './pages/Project/Projects'
+import ProjectDetail from './pages/Project/ProjectDetail'
 import Shop from './pages/Shop/Shop'
 import ShopDetail from './pages/Shop/ShopDetail'
 import Layout from "./components/Layout"
@@ -74,8 +75,8 @@ function App() {
         <Route path="faq" element={<Faq />} />
         <Route path="about" element={<About />} />
         <Route path="projects" element={<Projects />} />
+        <Route path="projects/:id" element={<ProjectDetail />} />
         <Route path="shop" element={<Shop />} />
-
         <Route path="shop/:id" element={<ShopDetail />} />
 
         <Route path="materials" element={<Materials />}>

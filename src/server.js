@@ -22,6 +22,34 @@ export function makeServer() {
     This item is only available for custom order. We adjust the pattern for fit, and discuss custom details: size, colour, button/buttonhole type, paper type/finish, oil, dyed, natural, thicker, thinner, waxed, collar application and shape, internal or external pockets/lining.`, customOrder: `We love custom orders! We can make a specific colour for you, stitch your name into the cap, etc. Send us a reference or Pantone colour and we can go from there 👽️ See below for some inspiration.`, cleaning: `To clean, lightly handwash in cold water or dryclean.Learn more about the materials we use here.`}
   ];
 
+  const projectList = [
+    { id: 1, year: 2024, type: "judging panel", title: "Fresh!" },
+    { id: 2, year: 2024, type: "workshops", title: "Making Paper Cloth" },
+    { id: 3, year: 2023, type: "exhibitions", title: "Everyone’s Heard  of a Dragon" },
+    { id: 4, year: 2023, type: "exhibitions", title: "Material Matters, part 1" },
+    { id: 5, year: 2023, type: "exhibitions", title: "Kamiko: Five Paper Coats" },
+    { id: 6, year: 2023, type: "exhibitions", title: "NO THINGS, part 1" },
+    { id: 7, year: 2023, type: "exhibitions", title: "Vessel, Cloth & Cloak" },
+    { id: 8, year: 2023, type: "exhibitions", title: "The Vessel Project" },
+    { id: 9, year: 2023, type: "commissions", title: "Uniform design for Mpavilion 10" },
+    { id: 10, year: 2023, type: "commissions", title: "Paper T-shirt" },
+    { id: 11, year: 2023, type: "collaborations", title: "DNJ Paper x Articles of Clothing" },
+    { id: 12, year: 2023, type: "funding", title: "Mason Family Trust Research Fellowship" },
+    { id: 13, year: 2023, type: "workshops", title: "Making Paper Cloth" },
+    { id: 14, year: 2023, type: "workshops", title: "Making Paper Collage Cloth" },
+    { id: 15, year: 2023, type: "workshops", title: "Mpavilion Educators Workshop" },
+    { id: 16, year: 2022, type: "funding", title: "Creative Victoria Creators Fund Grantee" },
+    { id: 17, year: 2022, type: "residencies", title: "Makers-in-Residence, Craft Contemporary" },
+    { id: 18, year: 2022, type: "workshops", title: "Making Paper Cloth" },
+    { id: 19, year: 2021, type: "awards", title: "Finalist, Fashion Design Category, Victorian" },
+    { id: 20, year: 2021, type: "awards", title: "Premier Design Awards" },
+    { id: 21, year: 2021, type: "residencies", title: "Artisans-in-residence, STHBNK by Beulah" },
+    { id: 22, year: 2021, type: "workshops", title: "Stationary/Stationery: A Paper Clothes Making Workshop (With artist Beatrice Wharldall)" },
+    { id: 23, year: 2021, type: "symposia", title: "Against Durability: A Wardrobe Made of Paper" },
+    { id: 24, year: 2020, type: "exhibitions", title: "Future Prototyping" },
+    { id: 25, year: 2020, type: "sympsia", title: "Contemporary Fashion Practices" },
+  ]
+
   return createServer({
     routes() {
       this.namespace = "api";
@@ -36,6 +64,18 @@ export function makeServer() {
         let id = request.params.id;
         let shopItem = shopItems.find((item) => item.id === parseInt(id));
         return shopItem ? { shopItem } : new Response(404, {}, { error: "Item not found" });
+      });
+
+      //Route for fetching all projects
+      this.get("/projects", () => {
+        return { projectList }
+      });
+
+      // Route for fetchining a single project item by ID
+      this.get("/projects/:id", (schema, request) => {
+        let id = request.params.id;
+        let project = projectList.find((item) => item.id === parseInt(id));
+        return project ? { project } : new Response(404, {}, { error: "Item not found" });
       });
     },
   });

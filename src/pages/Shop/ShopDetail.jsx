@@ -20,37 +20,38 @@ export default function ShopDetail() {
 
   return(
     <div>
-
-      <div class="product-container twelve-grid-container">
-        <div class="product-title">
+      <div className="product-container twelve-grid-container">
+        <div className="product-title">
           <Link
             to=".."
             relative="path"
           >
-            &larr; <span class="label">All items</span>
+            &larr; <span className="label">All items</span>
           </Link>
         </div>
-        <div class="product-images-description">
+        <div className="product-images-description">
           <h4>{shopItem.title} {shopItem.madeToOrder && ' (Made to order)'}</h4>
-          <div class="p-medium-bottom">
+          <div className="p-medium-bottom">
             <p>{shopItem.description}</p>
           </div>
-          <div class="p-medium-bottom">
-            <p class="label">Custom order</p>
+          <div className="p-medium-bottom">
+            <p className="label">Custom order</p>
             <p>{shopItem.customOrder}</p>
           </div>
-          <div class="p-medium-bottom">
-            <p class="label">Cleaning</p>
+          <div className="p-medium-bottom">
+            <p className="label">Cleaning</p>
             <p>{shopItem.cleaning}</p>
           </div>
-          <div class="p-medium-bottom">
+          <div className="p-medium-bottom">
             <p>A${shopItem.price}</p>
           </div>
-          <button class="buy-button">Add to bag</button>
+          <button className="buy-button">Add to bag</button>
         </div>
-        <div class="product-images-container">
+        <div className="product-images-container">
           {
-            shopItem.imageUrl.map(image => <img src={image}/>)
+            shopItem.imageUrl.map((image, index) => {
+              return <img src={image} key={index}/>
+            })
           }
         </div>
       </div>

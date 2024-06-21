@@ -32,7 +32,7 @@ export default function Shop() {
   ))
 
   return(
-    <div class="shop-list-container twelve-grid-container">
+    <div className="shop-list-container twelve-grid-container">
       {shopItemElements}
     </div>
   )

@@ -8,8 +8,8 @@ export default function ShopItemCard(prop) {
       </div>
       <div>
         <span>{prop.title}</span>
-        <span class="label"> ${prop.price}</span>
-        <span class="label">{prop.madeToOrder && ' Made to order'}</span>
+        <span className="label"> ${prop.price}</span>
+        <span className="label">{prop.madeToOrder && ' Made to order'}</span>
       </div>
     </div>
   )

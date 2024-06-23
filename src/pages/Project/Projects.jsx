@@ -46,20 +46,21 @@ export default function Projects() {
         {Object.keys(projectsByYear[year]).map(type => (
           <div key={type}>
             {/* <h2 className="label">{type}</h2> */}
-            <ul>
+
               {projectsByYear[year][type].map(project => (
                 <Link
                   to={`/projects/${project.id}`}
                   aria-label={`View details for project ${project.title}`}
                   key={project.id}
+                  className="project-list--item"
                 >
-                  <li>
-                    {project.title}
+
+                    <span>{project.title}</span>
                     <span class="font-serif"> {capitalizeFirstLetter(project.type)}</span>
-                  </li>
+
                 </Link>
               ))}
-            </ul>
+
           </div>
         ))}
       </div>
@@ -67,7 +68,7 @@ export default function Projects() {
 
     return (
       <div className="twelve-grid-container">
-        <div className="project-list twelve-col-full">
+        <div className="project-list twelve-col-last-six">
           {projectElements}
         </div>
       </div>

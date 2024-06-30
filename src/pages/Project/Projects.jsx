@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Swiper from '../../components/Swiper'
 import { makeServer } from '../../server' // May not need cus already declared in shop
 
 // Initialize the MirageJS server (already declared in Shop)
@@ -68,7 +69,7 @@ export default function Projects() {
 
     return (
       <div className="twelve-grid-container">
-        <div className="project-list twelve-col-last-six">
+        <div className="project-list">
           {projectElements}
         </div>
       </div>

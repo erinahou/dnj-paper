@@ -1,6 +1,7 @@
 import React from "react"
 import { Outlet, NavLink } from "react-router-dom"
 import stackOfPaper from '../assets/images/dnj_paperStack@3x.png'
+import Swiper from '../components/Swiper'
 import AgarAgar from "./Materials/AgarAgar"
 import Konjac from "./Materials/Konjac"
 import FermentedPersimmon from "./Materials/FermentedPersimmon"
@@ -17,10 +18,11 @@ export default function Materials() {
         <h1>Every piece from DNJ is made of handmade paper</h1>
         <p>(and sometimes other stuff, too).</p>
       </div>
-      <div className="materials-carousel twelve-col-first-four">
+      {/* <div className="materials-carousel twelve-col-first-four">
         <img src={stackOfPaper} alt="Hanging paper" className="materials-carousel"/>
         <p className="caption">1/3</p>
-      </div>
+      </div> */}
+      <Swiper />
       <div className="twelve-col-last-six">
         <div className="p-large-bottom">
           <p className="label p-medium-bottom">Japanese paper / Washi / 和紙</p>

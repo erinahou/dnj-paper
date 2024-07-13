@@ -3,6 +3,9 @@ import React from 'react'
 
 export default function Home() {
   return(
-    <h1>This is the Homepage</h1>
+    <div>
+      <h1>This is the Homepage</h1>
+      <p>Testing update since updating node/npm.</p>
+    </div>
   )
 }
